@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fa" dir="rtl" >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>جدول ارزیابی ایده‌های کسب‌وکار</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">
+          <div class="logo">SD9</div>
+          <div>
+            <h1>جدول ارزیابی ایده‌های کسب‌وکار</h1>
+            <p class="sub">
+              ایده‌ها را با معیارهای یکسان مقایسه کن و تصمیم دقیق‌تری بگیر.
+            </p>
+          </div>
+        </div>
+        <div class="hint">
+          امتیاز هر معیار از ۱ تا ۵ است.<br />اعداد نمونه را با اطلاعات خودت عوض
+          کن.
+        </div>
+      </header>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">ایده کسب‌وکار</th>
+              <th colspan="5">معیارهای ارزیابی (از ۵)</th>
+              <th rowspan="2">امتیاز نهایی</th>
+              <th rowspan="2">هزینه موردنیاز (تومان)</th>
+              <th rowspan="2">حذف</th>
+            </tr>
+            <tr>
+              <th>فرصت بازار</th>
+              <th>
+                سرمایه‌گذاری<br /><small>سرمایه کمتر = امتیاز بیشتر</small>
+              </th>
+              <th>مدیریت و اجرا</th>
+              <th>سودآوری</th>
+              <th>ریسک<br /><small>ریسک کمتر = امتیاز بیشتر</small></th>
+            </tr>
+          </thead>
+          <tbody id="ideasBody">
+            <tr>
+              <td class="idea-cell">
+                <input
+                  class="idea-input"
+                  value="فروش اینترنتی کتاب"
+                  aria-label="نام ایده"
+                />
+              </td>
+              <td>
+                <input
+                  class="rating"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value="4"
+                  aria-label="فرصت بازار"
+                />
+              </td>
+              <td>
+                <input
+                  class="rating"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value="3"
+                  aria-label="سرمایه‌گذاری"
+                />
+              </td>
+              <td>
+                <input
+                  class="rating"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value="4"
+                  aria-label="مدیریت و اجرا"
+                />
+              </td>
+              <td>
+                <input
+                  class="rating"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value="4"
+                  aria-label="سودآوری"
+                />
+              </td>
+              <td>
+                <input
+                  class="rating"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value="4"
+                  aria-label="ریسک"
+                />
+              </td>
+              <td class="score-cell">
+                <span class="score-value">—</span
+                ><span class="score-percent">از ۱۰۰</span>
+              </td>
+              <td>
+                <input
+                  class="cost"
+                  type="number"
+                  min="0"
+                  step="100000"
+                  value="25000000"
+                  aria-label="هزینه به تومان"
+                />
+              </td>
+              <td>
+                <button class="danger delete-row" type="button">×</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="idea-cell">
+                <input
+                  class="idea-input"
+                  value="خدمات طراحی سایت"
+                  aria-label="نام ایده"
+                />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="5" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="5" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="3" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="4" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="4" />
+              </td>
+              <td class="score-cell">
+                <span class="score-value">—</span
+                ><span class="score-percent">از ۱۰۰</span>
+              </td>
+              <td>
+                <input
+                  class="cost"
+                  type="number"
+                  min="0"
+                  step="100000"
+                  value="8000000"
+                />
+              </td>
+              <td>
+                <button class="danger delete-row" type="button">×</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="idea-cell">
+                <input
+                  class="idea-input"
+                  value="فروش محصولات دست‌ساز"
+                  aria-label="نام ایده"
+                />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="3" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="4" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="4" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="3" />
+              </td>
+              <td>
+                <input class="rating" type="number" min="1" max="5" value="3" />
+              </td>
+              <td class="score-cell">
+                <span class="score-value">—</span
+                ><span class="score-percent">از ۱۰۰</span>
+              </td>
+              <td>
+                <input
+                  class="cost"
+                  type="number"
+                  min="0"
+                  step="100000"
+                  value="15000000"
+                />
+              </td>
+              <td>
+                <button class="danger delete-row" type="button">×</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <button class="primary" id="calculateBtn">
+          محاسبه امتیاز و هزینه نهایی</button
+        ><button class="secondary" id="addRowBtn">＋ افزودن ایده جدید</button
+        ><button class="secondary" id="resetBtn">بازنشانی نمونه‌ها</button
+        ><span class="status" id="status">نتایج آماده محاسبه‌اند.</span>
+      </div>
+      <section class="summary">
+        <div class="summary-card">
+          <div class="label">تعداد ایده‌ها</div>
+          <div class="value" id="ideaCount">۳ ایده</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">مجموع هزینه موردنیاز</div>
+          <div class="value" id="totalCost">— تومان</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">بالاترین امتیاز</div>
+          <div class="value" id="bestIdea">—</div>
+        </div>
+      </section>
+      <section class="notes">
+        <div class="note">
+          <strong>روش محاسبه</strong>
+          <ul>
+            <li>هر معیار باید عددی بین ۱ تا ۵ باشد.</li>
+            <li>امتیاز نهایی = مجموع پنج معیار ÷ ۲۵ × ۱۰۰.</li>
+            <li>هزینه کل، مجموع هزینه واردشده برای همه ایده‌هاست.</li>
+            <li>
+              در معیار سرمایه‌گذاری و ریسک، امتیاز بالاتر یعنی شرایط مناسب‌تر.
+            </li>
+          </ul>
+        </div>
+        <div class="note">
+          <strong>نکته</strong>این قالب محاسبات را در همین صفحه انجام می‌دهد.
+          برای باقی‌ماندن اطلاعات پس از بستن یا تازه‌سازی صفحه، باید بعداً
+          قابلیت ذخیره‌سازی اضافه شود.
+        </div>
+        <a href="../index.html" class="sub">
+          <p>
+            بازگشت به صفحه اصلی
+          </p>
+        </a>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

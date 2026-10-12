@@ -1,0 +1,676 @@
+/* =================================
+   تنظیمات اولیه
+================================= */
+
+:root {
+    --background: #07111f;
+    --surface: #101e31;
+    --text: #f4f7ff;
+    --muted: #a9bad0;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.9;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =================================
+   بخش بالایی سایت
+================================= */
+
+.hero {
+    min-height: 480px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 75px 20px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(55, 130, 220, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(85, 90, 255, 0.15),
+            transparent 35%
+        ),
+        #0a1627;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+
+    animation: fadeUp 0.9s ease both;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 16px;
+
+    color: #6de5da;
+
+    border: 1px solid rgba(109, 229, 218, 0.3);
+    background: rgba(109, 229, 218, 0.07);
+
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 62px);
+    font-weight: 800;
+    line-height: 1.5;
+
+    margin: 22px 0;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #6de5da,
+        #6eb7ff,
+        #b79cff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 2.3;
+}
+
+
+/* =================================
+   دکمه شروع
+================================= */
+
+.start-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 30px;
+    padding: 13px 24px;
+
+    background: #6de5da;
+    color: #07111f;
+
+    border-radius: 13px;
+    font-weight: 800;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 35px rgba(109, 229, 218, 0.2);
+
+    background: #8af3e9;
+}
+
+.start-button span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.start-button:hover span {
+    transform: translateY(4px);
+}
+
+
+/* =================================
+   شکل‌های تزئینی پس‌زمینه
+================================= */
+
+.hero-decoration {
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: rotateDecoration 25s linear infinite;
+}
+
+.decoration-one {
+    top: -130px;
+    right: -70px;
+}
+
+.decoration-two {
+    bottom: -170px;
+    left: -70px;
+
+    width: 320px;
+    height: 320px;
+
+    animation-direction: reverse;
+}
+
+
+/* =================================
+   محتوای اصلی
+================================= */
+
+.container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 65px 20px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-label {
+    color: #6de5da;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+
+    font-size: clamp(24px, 4vw, 35px);
+    font-weight: 800;
+}
+
+.section-heading p {
+    max-width: 680px;
+    margin: auto;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =================================
+   شبکه کارت‌ها
+================================= */
+
+.canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =================================
+   کارت‌های اصلی
+================================= */
+
+.canvas-card {
+    --accent: #6de5da;
+
+    position: relative;
+    overflow: hidden;
+
+    min-height: 275px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 43, 67, 0.98),
+            rgba(12, 25, 42, 0.98)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 23px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+
+    animation: fadeUp 0.7s ease both;
+}
+
+
+/* خط رنگی بالای کارت */
+
+.canvas-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--accent);
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 0.35s ease;
+}
+
+
+/* نور تزئینی داخل کارت */
+
+.canvas-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: -80px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+    opacity: 0;
+
+    filter: blur(70px);
+
+    transition: opacity 0.35s ease;
+
+    pointer-events: none;
+}
+
+
+/* افکت حرکت موس */
+
+.canvas-card:hover {
+    transform: translateY(-9px);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.canvas-card:hover::before {
+    transform: scaleX(1);
+}
+
+.canvas-card:hover::after {
+    opacity: 0.14;
+}
+
+
+/* =================================
+   آیکون کارت
+================================= */
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    background: color-mix(
+        in srgb,
+        var(--accent) 13%,
+        transparent
+    );
+
+    transition:
+        transform 0.35s ease,
+        border-radius 0.35s ease;
+
+    position: relative;
+    z-index: 1;
+}
+
+.canvas-card:hover .card-icon {
+    transform: rotate(-7deg) scale(1.08);
+    border-radius: 22px;
+}
+
+
+/* =================================
+   عنوان و توضیحات کارت
+================================= */
+
+.card-number {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    color: rgba(255, 255, 255, 0.25);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.canvas-card h3 {
+    margin-top: 18px;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    position: relative;
+    z-index: 1;
+}
+
+.canvas-card p {
+    margin-top: 10px;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2.2;
+
+    position: relative;
+    z-index: 1;
+}
+
+.card-link {
+    display: inline-block;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: transform 0.3s ease;
+
+    position: relative;
+    z-index: 1;
+}
+
+.canvas-card:hover .card-link {
+    transform: translateX(-5px);
+}
+
+
+/* =================================
+   رنگ اختصاصی هر کارت
+================================= */
+
+.card-partners {
+    --accent: #4dd8c8;
+}
+
+.card-activities {
+    --accent: #6eb7ff;
+}
+
+.card-resources {
+    --accent: #b79cff;
+}
+
+.card-value {
+    --accent: #ffcf70;
+}
+
+.card-relationships {
+    --accent: #ff8db2;
+}
+
+.card-channels {
+    --accent: #73e0a0;
+}
+
+.card-customers {
+    --accent: #ff9b72;
+}
+
+.card-revenue {
+    --accent: #76d7ff;
+}
+
+.card-costs {
+    --accent: #ffd27a;
+}
+
+
+/* =================================
+   پیام انتهای صفحه
+================================= */
+
+.bottom-message {
+    margin-top: 65px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(109, 229, 218, 0.06),
+            rgba(110, 183, 255, 0.04)
+        );
+}
+
+.bottom-icon {
+    color: #6de5da;
+    font-size: 35px;
+
+    animation: pulse 2s ease-in-out infinite;
+}
+.bottom-message h2 {
+    margin: 10px 0;
+
+    font-size: clamp(20px, 4vw, 27px);
+}
+
+.bottom-message p {
+    max-width: 680px;
+    margin: auto;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2.3;
+}
+
+
+/* =================================
+   فوتر
+================================= */
+
+footer {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #7188a3;
+    font-size: 12px;
+
+    border-top: 1px solid var(--border);
+}
+
+footer span {
+    color: #6de5da;
+    margin: 0 5px;
+}
+
+
+/* =================================
+   انیمیشن‌ها
+================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes rotateDecoration {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes pulse {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 0.7;
+    }
+
+}
+
+
+/* =================================
+   تبلت
+================================= */
+
+@media (max-width: 900px) {
+
+    .canvas-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+}
+
+
+/* =================================
+   موبایل
+================================= */
+
+@media (max-width: 580px) {
+
+    .hero {
+        min-height: auto;
+        padding: 65px 18px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 45px 13px;
+    }
+
+    .canvas-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .canvas-card {
+        min-height: 250px;
+        padding: 22px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .bottom-message {
+        padding: 27px 18px;
+        margin-top: 40px;
+    }
+
+}
+
+
+/* =================================
+   کاهش حرکت برای دسترس‌پذیری
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
